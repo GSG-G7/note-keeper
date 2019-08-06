@@ -1,0 +1,32 @@
+{
+    "arr":[
+        {
+            "id":1,
+            "info":{
+                "name": "amooda",
+                "email": "amoda@gmail.com",
+                "password": "123456",
+                "link": "https://pastebin.com/raw/Xzrsx8Pd"
+            }
+        },
+        {
+            "id":2,
+            "info":{
+                "name": "amooda2",
+                "email": "amoda@gmail.com",
+                "password": "123456",
+                "link": "https://pastebin.com/raw/PngPj4NL"
+            }
+        },
+        {
+            "id":3,
+            "info":{
+                "name": "amooda3",
+                "email": "amoda@gmail.com",
+                "password": "123456",
+                "link": "https://pastebin.com/raw/Xzrsx8Pd"
+            }
+        }
+
+    ]
+}
