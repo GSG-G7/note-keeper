@@ -1,0 +1,45 @@
+<form action="/post" method="POST" class="form">
+
+  <label for="username">Username
+    <input type="text" name="username" id="username" class="form__username">
+    <span id="username-error" class="form__username-error">
+    </span>
+  </label>
+
+  <label for="email"> Email
+    <input type="email" name="email" id="email" class="form__email">
+    <span id="username-error" class="form__username-error">
+    </span>
+  </label>
+
+  <label for="password"> Password
+    <input type="password" name="password" id="password" class="form__password">
+    <span id="username-error" class="form__username-error">
+    </span>
+  </label>
+
+  <label for="confirm"> Confirm
+    <input type="password" name="confirm" id="confirm" class="form__confirm">
+    <span id="username-error" class="form__username-error">
+    </span>
+  </label>
+
+  <label for="paste"> Enter your note:
+    <textarea type="text" name="paste" id="paste" cols="30" rows="10" class="form__paste" multiple></textarea>
+    <span id="username-error" class="form__username-error">
+    </span>
+  </label>
+
+  <input type="submit" class="submit">
+
+</form>
+
+<ul id="note-links" class="note-links">
+  {{#each notes}}
+  <li class="note-links__note">
+    <a href={{this.link}}>
+
+    </a>
+  </li>
+  {{/each}}
+</ul>
