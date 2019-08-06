@@ -1,7 +1,7 @@
 const express = require('express');
 const { join } = require('path');
 const exphbs = require('express-handlebars');
-const router = require('./routes');
+const router = require('./controllers');
 const helpers = require('./views/helpers');
 
 const app = express();
