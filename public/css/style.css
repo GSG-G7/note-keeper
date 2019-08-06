@@ -1,0 +1,39 @@
+*{
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+  outline: none
+}
+.header{
+  margin-top: 10px;
+  text-align: center;
+}
+.form{
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: auto;
+  font-size: 1.2rem;
+
+}
+.form label {
+  width: 100%;
+  margin: .5rem 1.3rem;
+}
+.form input{
+  width: 100%;
+  font-size: inherit;
+  padding: 5px 10px;
+}
+.form__paste {
+  height: 100px;
+  width: 100%;
+  font-size: inherit;
+  padding: 5px 10px;
+  resize: vertical;
+}
+.form .submit{
+  width: 40%;
+  margin:auto;
+  padding: 8px;
+}
