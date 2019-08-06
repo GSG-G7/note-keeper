@@ -1,0 +1,32 @@
+{
+  "name": "project-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node ./tests/test.js | tap-spec",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "killrun": "npm run killport && npm run dev",
+    "killport": "fuser -k 5000/tcp",
+    "cover": "nyc --reporter=lcov node ./tests/test.js ",
+    "coverage": "nyc node ./tests/test.js "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  }
+}
