@@ -5,8 +5,12 @@
   outline: none;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
+body{
+  background: linear-gradient(#c7560c, #ff990057);
+}
 .header{
   margin-top: 10px;
+  color: white;
   text-align: center;
 }
 .form{
@@ -37,6 +41,12 @@
   width: 40%;
   margin:auto;
   padding: 8px;
+  border: 1px solid white;
+  background: #96542b;
+  font-weight: bold;
+  border-radius: 7px;
+  cursor: pointer;
+  color:white;
 }
 
 
@@ -44,4 +54,25 @@
   float: right;
   font-weight: bold;
   color: red;
+}
+.note-links{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 80%;
+  margin:auto
+}
+.note-links__note{
+  margin: 10px 10px;
+  list-style: none;
+  background: #8c3b08;
+  /* transform: rotate(0deg); */
+  border-radius: 7px;
+  padding: 20px;
+  color: #fff;
+  border: 1px solid;
+}
+.note-links__note a{
+  text-decoration: none;
+  color: #fff
 }

@@ -56,7 +56,7 @@ router.post('/post', (req, res, next) => {
       }));
       return resp;
     })
-    .then(resp => res.end(resp))
+    .then(() => res.redirect('/'))
     .catch(next);
 });
 
