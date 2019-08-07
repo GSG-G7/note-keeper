@@ -17,11 +17,11 @@ router.get('/paste/:id', (req, res, next) => {
     .catch(next);
 });
 
-router.post('/post', (req, res) => {
+router.post('/post', (req, res, next) => {
   const url = 'https://pastebin.com/api/api_post.php';
   // eslint-disable-next-line camelcase
   const { api_paste_code, api_paste_name } = req.body;
-  fetch(url, {
+  const requestObj = {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -34,8 +34,11 @@ router.post('/post', (req, res) => {
       api_paste_code,
       api_paste_name,
     }),
-  }).then(resp => resp.text())
-    .then(resp => res.end(resp));
+  };
+  fetch(url, requestObj)
+    .then(resp => resp.text())
+    .then(resp => res.end(resp))
+    .catch(next);
 });
 
 

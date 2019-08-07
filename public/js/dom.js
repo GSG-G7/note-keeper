@@ -17,9 +17,6 @@ const confirmError = selector('#confirm-error');
 const paste = selector('#paste');
 const pasteError = selector('#paste-error');
 
-const submit = selector('#submit');
-
-
 const userErr = () => {
   if (username.value === '') {
     usernameError.textContent = 'Enter Your Name';
@@ -55,7 +52,7 @@ const passwordErr = () => {
 
 const confirmErr = () => {
   if (confirm.value !== password.value) {
-    confirmError.textContent = 'Error Confirme'; 
+    confirmError.textContent = 'Error Confirme';
     return false;
   }
   confirmError.textContent = '';
