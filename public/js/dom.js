@@ -14,6 +14,9 @@ const passwordError = selector('#password-error');
 const confirm = selector('#confirm');
 const confirmError = selector('#confirm-error');
 
+const title = selector('#title');
+const titleError = selector('#title-error');
+
 const paste = selector('#paste');
 const pasteError = selector('#paste-error');
 
@@ -69,5 +72,20 @@ const pasteErr = () => {
 };
 
 form.addEventListener('submit', (e) => {
-  if (!(userErr() && emailErr() && passwordErr() && confirmErr() && pasteErr())) e.preventDefault();
+  e.preventDefault();
+  if (userErr() && emailErr() && passwordErr() && confirmErr() && pasteErr()) {
+    fetch('/post', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: username.value,
+        email: email.value,
+        password: password.value,
+        api_paste_name: title.value,
+        api_paste_code: paste.value,
+      }),
+    });
+  }
 });

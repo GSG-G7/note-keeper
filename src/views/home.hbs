@@ -20,6 +20,11 @@
     <input type="password" name="confirm" id="confirm" class="form__confirm" >
   </label>
 
+  <label for="title"> Paste Title:
+    <span id="title-error" class="form__username-error"></span>
+    <input type="text" name="title" id="title" class="form__title" >
+  </label>
+
   <label for="paste"> Enter your note:
     <span id="paste-error" class="form__username-error"></span>
     <textarea type="text" name="paste" id="paste" cols="30" rows="10" class="form__paste" multiple></textarea>
@@ -32,8 +37,8 @@
 <ul id="note-links" class="note-links">
   {{#each notes}}
   <li class="note-links__note">
-    <a href={{this.link}}>
-
+    <a href="paste/{{this.id}}">
+    {{this.info.title}}
     </a>
   </li>
   {{/each}}
