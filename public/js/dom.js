@@ -76,6 +76,7 @@ form.addEventListener('submit', (e) => {
   if (userErr() && emailErr() && passwordErr() && confirmErr() && pasteErr()) {
     fetch('/post', {
       method: 'POST',
+      redirect: 'manual',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -86,6 +87,6 @@ form.addEventListener('submit', (e) => {
         api_paste_name: title.value,
         api_paste_code: paste.value,
       }),
-    });
+    }).then(window.location.href = '/');
   }
 });
