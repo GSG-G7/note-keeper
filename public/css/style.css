@@ -7,7 +7,9 @@
 }
 body{
   background: linear-gradient(#c7560c, #ff990057);
+  height: 100vh;
 }
+
 .header{
   margin-top: 10px;
   color: white;
