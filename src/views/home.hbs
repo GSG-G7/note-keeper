@@ -1,36 +1,31 @@
 <form action="/post" method="POST" class="form">
 
-  <label for="username">Username
-    <input type="text" name="username" id="username" class="form__username">
-    <span id="username-error" class="form__username-error">
-    </span>
+  <label for="username">Username:
+    <span id="username-error" class="form__username-error"></span>
+    <input type="text" name="username" id="username" class="form__username" >
   </label>
 
-  <label for="email"> Email
-    <input type="email" name="email" id="email" class="form__email">
-    <span id="username-error" class="form__username-error">
-    </span>
+  <label for="email"> Email:
+    <span id="email-error" class="form__username-error"></span>
+    <input type="email" name="email" id="email" class="form__email" >
   </label>
 
-  <label for="password"> Password
-    <input type="password" name="password" id="password" class="form__password">
-    <span id="username-error" class="form__username-error">
-    </span>
+  <label for="password"> Password:
+    <span id="password-error" class="form__username-error"></span>
+    <input type="password" name="password" id="password" class="form__password"  >
   </label>
 
-  <label for="confirm"> Confirm
-    <input type="password" name="confirm" id="confirm" class="form__confirm">
-    <span id="username-error" class="form__username-error">
-    </span>
+  <label for="confirm"> Confirm:
+    <span id="confirm-error" class="form__username-error"></span>
+    <input type="password" name="confirm" id="confirm" class="form__confirm" >
   </label>
 
   <label for="paste"> Enter your note:
+    <span id="paste-error" class="form__username-error"></span>
     <textarea type="text" name="paste" id="paste" cols="30" rows="10" class="form__paste" multiple></textarea>
-    <span id="username-error" class="form__username-error">
-    </span>
   </label>
 
-  <input type="submit" class="submit">
+  <input type="submit" class="submit" id="submit">
 
 </form>
 
@@ -43,3 +38,6 @@
   </li>
   {{/each}}
 </ul>
+
+<script src="/js/index.js"></script>
+<script src="/js/dom.js"></script>

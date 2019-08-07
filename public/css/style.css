@@ -2,7 +2,8 @@
   padding: 0%;
   margin: 0%;
   box-sizing: border-box;
-  outline: none
+  outline: none;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 .header{
   margin-top: 10px;
@@ -36,4 +37,11 @@
   width: 40%;
   margin:auto;
   padding: 8px;
+}
+
+
+.form span{
+  float: right;
+  font-weight: bold;
+  color: red;
 }
