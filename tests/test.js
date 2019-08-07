@@ -1,7 +1,7 @@
 const test = require('tape');
 const supertest = require('supertest');
 const app = require('../src/app');
-const data = require('../src/models/data.json');
+const generateId = require('../src/helpers/generateId');
 
 test('Testing for homepage', (t) => {
   supertest(app)
@@ -48,4 +48,12 @@ test('testing the get /paste/:id route', (t) => {
       t.ok(res.text.includes(expected), 'links should match');
       t.end();
     });
+});
+
+test('generate id function testing', (t) => {
+  t.plan(10);
+  // eslint-disable-next-line no-plusplus
+  for (let i = 1; i <= 10; i++) {
+    t.equal(generateId(), i, `generateId run no#${i}`);
+  }
 });
