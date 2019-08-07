@@ -41,6 +41,12 @@ body{
   width: 40%;
   margin:auto;
   padding: 8px;
+  border: 1px solid white;
+  background: #96542b;
+  font-weight: bold;
+  border-radius: 7px;
+  cursor: pointer;
+  color:white;
 }
 
 
