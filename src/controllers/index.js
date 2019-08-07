@@ -14,11 +14,11 @@ router.get('/', (req, res) => {
 
 router.get('/paste/:id', (req, res, next) => {
   readData()
-    .then(data => data.arr[req.params.id - 1].info.pasteLink) //alternate soltion use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+    .then(data => data.arr[req.params.id - 1].info.pasteLink) // alternate soltion use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
     .then(link => fetch(link)
       .then(resp => resp.text())
       .then(data => res.render('paste', { data })))
-    .catch(console.log);
+    .catch(next);
 });
 
 router.post('/post', (req, res, next) => {
@@ -26,7 +26,6 @@ router.post('/post', (req, res, next) => {
     // eslint-disable-next-line camelcase
     username, password, email, api_paste_code, api_paste_name,
   } = req.body;
-  console.log(req.body);
   const url = 'https://pastebin.com/api/api_post.php';
   const requestObj = {
     method: 'POST',
