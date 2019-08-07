@@ -32,7 +32,7 @@ test('Testing for statics', (t) => {
     .get('/js/index.js')
     .expect(200)
     .expect('Content-type', /javascript/)
-    .end((err, res) => {
+    .end((err) => {
       t.error(err);
       t.end();
     });
