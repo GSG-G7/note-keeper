@@ -1,26 +1,33 @@
 const router = require('express').Router();
 const fetch = require('node-fetch');
 const qs = require('querystring');
-const { getData } = require('../helpers');
+const {
+  readData, writeData, insertRawIntoLink, generateId,
+} = require('../helpers');
 const { clientError, serverError } = require('./error');
 
 router.get('/', (req, res) => {
-  res.render('home', {});
+  readData()
+    .then(data => data.arr)
+    .then(data => res.render('home', { notes: data }));
 });
 
 router.get('/paste/:id', (req, res, next) => {
-  getData()
-    .then(data => data.arr[req.params.id - 1].info.link)
+  readData()
+    .then(data => data.arr[req.params.id - 1].info.pasteLink) //alternate soltion use https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
     .then(link => fetch(link)
       .then(resp => resp.text())
       .then(data => res.render('paste', { data })))
-    .catch(next);
+    .catch(console.log);
 });
 
 router.post('/post', (req, res, next) => {
+  const {
+    // eslint-disable-next-line camelcase
+    username, password, email, api_paste_code, api_paste_name,
+  } = req.body;
+  console.log(req.body);
   const url = 'https://pastebin.com/api/api_post.php';
-  // eslint-disable-next-line camelcase
-  const { api_paste_code, api_paste_name } = req.body;
   const requestObj = {
     method: 'POST',
     mode: 'cors',
@@ -37,6 +44,19 @@ router.post('/post', (req, res, next) => {
   };
   fetch(url, requestObj)
     .then(resp => resp.text())
+    .then((resp) => {
+      writeData(JSON.stringify({
+        id: generateId(),
+        info: {
+          username,
+          email,
+          password,
+          title: api_paste_name,
+          pasteLink: insertRawIntoLink(resp),
+        },
+      }));
+      return resp;
+    })
     .then(resp => res.end(resp))
     .catch(next);
 });
