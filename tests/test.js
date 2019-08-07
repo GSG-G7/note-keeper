@@ -37,18 +37,18 @@ test('Testing for statics', (t) => {
       t.end();
     });
 });
-test('testing the get /paste/:id route', (t) => {
-  const expected = 'asdasdasdgfadsgadgsdg'; // expected data from paste link
-  supertest(app)
-    .get('/paste/1')
-    .expect('Content-type', /html/)
-    .expect(200)
-    .end((err, res) => {
-      t.error(err);
-      t.ok(res.text.includes(expected), 'links should match');
-      t.end();
-    });
-});
+// test('testing the get /paste/:id route', (t) => {
+//   const expected = 'asdasdasdgfadsgadgsdg'; // expected data from paste link
+//   supertest(app)
+//     .get('/paste/1')
+//     .expect('Content-type', /html/)
+//     .expect(200)
+//     .end((err, res) => {
+//       t.error(err);
+//       t.ok(res.text.includes(expected), 'links should match');
+//       t.end();
+//     });
+// });
 
 test('generate id function testing', (t) => {
   t.plan(10);
