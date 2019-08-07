@@ -21,7 +21,6 @@ router.post('/post', (req, res) => {
   const url = 'https://pastebin.com/api/api_post.php';
   // eslint-disable-next-line camelcase
   const { api_paste_code, api_paste_name } = req.body;
-  console.log(req.body);
   fetch(url, {
     method: 'POST',
     mode: 'cors',
