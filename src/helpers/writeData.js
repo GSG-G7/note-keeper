@@ -20,5 +20,5 @@ module.exports = newData => new Promise((resolve, reject) => {
     data.arr.push(JSON.parse(newData));
     return data;
   })
-  .then(data => fs.writeFile(join(__dirname, '..', 'models', 'data.json'), JSON.stringify(data), (err) => { if (err) throw err; })); 
+  .then(data => fs.writeFile(join(__dirname, '..', 'models', 'data.json'), JSON.stringify(data), (err) => { if (err) throw err; }));
 // and here we write the json into the file, even if it doesnt exist
