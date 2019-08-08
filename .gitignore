@@ -2,3 +2,5 @@ node_modules
 .env
 npm-debug.log
 src/models/data.json
+.nyc_output
+coverage
