@@ -29,7 +29,7 @@ test('Testing for statics', (t) => {
 
 test('Testing for statics', (t) => {
   supertest(app)
-    .get('/js/index.js')
+    .get('/js/dom.js')
     .expect(200)
     .expect('Content-type', /javascript/)
     .end((err) => {
